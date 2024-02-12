@@ -1,0 +1,11 @@
+service WatchDog {
+    rpc FeedDog (FeedDogRequest) returns (FeedDogResponse) {}
+}
+
+message FeedDogRequest {
+    required string food = 1;
+}
+
+message FeedDogResponse {
+    required string message = 1;
+}

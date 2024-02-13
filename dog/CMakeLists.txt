@@ -38,7 +38,9 @@ target_link_libraries(dog_grpc_proto
 
 add_library(dog
         SHARED
-        watchdog.cpp)
+        watchdog.cpp
+        config_helper.cpp
+        timer.cpp)
 
 target_link_libraries(dog
         dog_grpc_proto)

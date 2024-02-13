@@ -8,8 +8,11 @@
 */
 #pragma once
 
-
-
 class ConfigHelper {
+public:
+    static ConfigHelper& GetInstance() {
+        static ConfigHelper instance;
+        return instance;
+    }
 
 };

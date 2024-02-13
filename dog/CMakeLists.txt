@@ -36,11 +36,17 @@ target_link_libraries(dog_grpc_proto
         ${_GRPC_GRPCPP}
         ${_PROTOBUF_LIBPROTOBUF})
 
-add_executable(dog
+add_library(dog
+        SHARED
         watchdog.cpp)
 
 target_link_libraries(dog
         dog_grpc_proto)
+
+add_executable(watchdog
+        main.cpp)
+
+target_link_libraries(watchdog dog)
 
 if (BUILD_TEST)
     add_executable(feeder feeder.cpp)

@@ -17,7 +17,7 @@ public:
     Feeder(std::shared_ptr<grpc::ChannelInterface> channel);
     ~Feeder() = default;
 
-    void FeedDog();
+    void FeedDog(const std::string_view& food);
 
 private:
     std::unique_ptr<WatchDog::Stub> stub_;

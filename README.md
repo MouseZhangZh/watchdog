@@ -1,5 +1,11 @@
 # 🐕WatchDog
 
+## Build, Debug, Run
+
+```shell
+sudo apt install libprotobuf-dev libgrpc++-dev libgrpc-dev protobuf-compiler-grpc
+```
+
 ## Config
 
 ### Service Config

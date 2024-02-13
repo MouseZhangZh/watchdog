@@ -1,11 +1,17 @@
-//
-// Created by Mouse Zhang on 2024/2/8.
-//
+/*
+    Created by Mouse Zhang on 2024/2/8.
+    This file is part of the watchdog project.
+
+    SPDX-FileCopyrightText: 2024 Mouse Zhang <mousezhang7@gmail.com>
+
+    SPDX-License-Identifier: GPL-2.0-or-later
+*/
 #include <string>
 
 #include <grpcpp/server_builder.h>
 
 #include "watchdog.h"
+#include "watchdog_export.h"
 
 class WatchDogPrivate {
 public:
@@ -29,7 +35,7 @@ grpc::Status WatchDogImpl::FeedDog(grpc::ServerContext* context, const FeedDogRe
     return grpc::Status::OK;
 }
 
-int main(int argc, char* argv[]) {
+int dog_main(int argc, char* argv[]) {
     std::ios::sync_with_stdio(false);
     WatchDogImpl watchdog;
     grpc::ServerBuilder builder;
@@ -39,4 +45,5 @@ int main(int argc, char* argv[]) {
     std::unique_ptr<grpc::Server> server(builder.BuildAndStart());
     std::cout << "Server listening on " << server_address << std::endl;
     server->Wait();
+    return 0;
 }

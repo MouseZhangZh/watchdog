@@ -9,5 +9,3 @@ include_directories(3rd)
 
 add_subdirectory(bite)
 add_subdirectory(dog)
-
-add_executable(watchdog main.cpp)
